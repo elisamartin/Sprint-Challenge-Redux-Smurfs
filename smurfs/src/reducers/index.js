@@ -2,7 +2,7 @@
   Be sure to import in all of the action types from `../actions`
 */
 
-import { LOADING, GET_SMURFS, ERROR } from '../actions';
+import { LOADING, GET_SMURFS, ERROR, ADD_SMURF } from '../actions';
 
 /*
  Your initial/default state for this project could *Although does not have to* look a lot like this
@@ -34,6 +34,8 @@ const smurfReducer = (state = initState, action) => {
 			return { ...state, smurfs: action.payload, loading: false };
 		case ERROR:
 			return { ...state, error: action.payload, loading: false };
+		case ADD_SMURF:
+			return { ...state, smurfs: action.payload, addingSmurf: true, loading: false };
 		default:
 			return state;
 	}

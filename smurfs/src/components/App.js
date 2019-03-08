@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SmurfVillage from './SmurfVillage';
+import AddSmurfForm from './AddSmurfForm';
 
 import './App.css';
 /*
@@ -14,6 +15,7 @@ class App extends Component {
 			<div className="App">
 				<h1>SMURFS! 2.0 W/ Redux</h1>
 				<SmurfVillage />
+				<AddSmurfForm />
 			</div>
 		);
 	}
