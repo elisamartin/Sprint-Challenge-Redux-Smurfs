@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getSmurfs } from '../actions/index';
+import Smurf from './Smurf';
 
 class SmurfVillage extends React.Component {
 	constructor(props) {
@@ -13,13 +14,7 @@ class SmurfVillage extends React.Component {
 	}
 
 	render() {
-		return (
-			<div>
-				{this.props.smurfs.map((smurf) => {
-					return <div key={smurf.name}>{smurf.name}</div>;
-				})}
-			</div>
-		);
+		return <div>{this.props.smurfs.map((smurf) => <Smurf smurf={smurf} key={smurf.name} />)}</div>;
 	}
 }
 
