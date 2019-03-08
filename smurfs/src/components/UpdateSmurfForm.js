@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addSmurf } from '../actions/index';
+import { updateSmurf } from '../actions/index';
 
-class AddSmurfForm extends Component {
+class UpdateSmurfForm extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -18,12 +18,7 @@ class AddSmurfForm extends Component {
 
 	submitHandler = (event) => {
 		event.preventDefault();
-		this.props.addSmurf(this.state);
-		this.setState({
-			age: '',
-			name: '',
-			height: ''
-		});
+		this.props.updateSmurf(this.state);
 	};
 
 	render() {
@@ -50,10 +45,10 @@ class AddSmurfForm extends Component {
 					onChange={this.inputHandler}
 					placeholder="Smurf Height"
 				/>
-				<button type="submit">Add Smurf</button>
+				<button type="submit">Update Smurf</button>
 			</form>
 		);
 	}
 }
 
-export default connect(null, { addSmurf })(AddSmurfForm);
+export default connect(null, { updateSmurf })(UpdateSmurfForm);
