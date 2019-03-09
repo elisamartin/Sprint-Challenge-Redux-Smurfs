@@ -14,7 +14,11 @@ class SmurfVillage extends React.Component {
 	}
 
 	render() {
-		return <div>{this.props.smurfs.map((smurf) => <Smurf smurf={smurf} key={smurf.name} />)}</div>;
+		return (
+			<div className="smurf-village">
+				{this.props.smurfs.map((smurf) => <Smurf smurf={smurf} key={smurf.name} />)}
+			</div>
+		);
 	}
 }
 

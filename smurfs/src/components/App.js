@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import SmurfVillage from './SmurfVillage';
 import AddSmurfForm from './AddSmurfForm';
-import { Route } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
 import './App.css';
-import UpdateSmurfForm from './UpdateSmurfForm';
+// import UpdateSmurfForm from './UpdateSmurfForm';
 /*
  to wire this component up you're going to need a few things.
  I'll let you do this part on your own. 
@@ -15,9 +15,12 @@ class App extends Component {
 		return (
 			<div className="App">
 				<h1>SMURFS! 2.0 W/ Redux</h1>
-				<SmurfVillage />
-				<AddSmurfForm />
-				<Route path="/update/:id" component={UpdateSmurfForm} />
+				<div className="navbar">
+					<NavLink to="/">Home</NavLink>
+					<NavLink to="/add">Add Smurfs</NavLink>
+				</div>
+				<Route exat path="/" component={SmurfVillage} />
+				<Route path="/add" component={AddSmurfForm} />
 			</div>
 		);
 	}
